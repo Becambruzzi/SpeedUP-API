@@ -1,1 +1,2 @@
-web: gunicorn gqlproject.wsgi
+
+web: gunicorn --pythonpath app gqlproject.wsgi
