@@ -1,8 +1,8 @@
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect('/Users/bernardocambruzzi/Desktop/gqlAPI/gqlproject/db.sqlite3')
-df = pd.read_csv('/Users/bernardocambruzzi/Desktop/Python/energy/export/subistema_dia.csv')
+conn = sqlite3.connect('gqlproject/db.sqlite3')
+df = pd.read_csv('subistema_dia2.csv')
 df['id'] = df.index
 
 
