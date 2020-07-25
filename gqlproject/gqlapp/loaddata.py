@@ -2,7 +2,7 @@ import sqlite3
 import psycopg2
 import pandas as pd
 
-conn = psycopg2.connect(host="localhost", port = 5432, database="gqlproject", user="becambruzzi", password="")
+#conn = psycopg2.connect(host="localhost", port = 5432, database="gqlproject", user="becambruzzi", password="")
 
 df = pd.read_csv('subistema_dia2.csv')
 df['id'] = df.index
@@ -50,10 +50,7 @@ df = df[
 ]
 print(df.columns)
 
-
+from sqlalchemy import create_engine
+engine = create_engine('postgresql://becambruzzi:@localhost:5432/gqlproject')
 df.to_sql('gqlapp_productmodel', engine,if_exists='replace')   
 
-#df.dropna().to_sql('gqlapp_productmodel', conn, if_exists='replace', index=False)
-
-#df=df[['id','Segment','Country','Product','Units','Sales','Datesold']]
-#df.to_sql('gqlapp_productmodel', conn, if_exists='replace', index=False)
