@@ -51,7 +51,9 @@ df = df[
 print(df.columns)
 
 
-df.dropna().to_sql('gqlapp_productmodel', conn, if_exists='replace', index=False)
+df.to_sql('gqlapp_productmodel', engine,if_exists='replace')   
+
+#df.dropna().to_sql('gqlapp_productmodel', conn, if_exists='replace', index=False)
 
 #df=df[['id','Segment','Country','Product','Units','Sales','Datesold']]
 #df.to_sql('gqlapp_productmodel', conn, if_exists='replace', index=False)
