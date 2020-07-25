@@ -1,7 +1,9 @@
 import sqlite3
+import psycopg2
 import pandas as pd
 
-conn = sqlite3.connect('gqlproject/db.sqlite3')
+conn = psycopg2.connect(host="localhost", port = 5432, database="gqlproject", user="becambruzzi", password="")
+
 df = pd.read_csv('subistema_dia2.csv')
 df['id'] = df.index
 
