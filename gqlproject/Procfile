@@ -1,1 +1,2 @@
 web: gunicorn --pythonpath gqlproject gqlproject.wsgi
+#web: gunicorn mysite.wsgi --log-file -
